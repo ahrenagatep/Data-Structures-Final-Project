@@ -50,7 +50,7 @@ public class CreatePlan extends JFrame{
                     // checks for any "(select one)" option was picked
                     if (fitnessGoal.equals("(select one)") || fitnessType.equals("(select one)") ||
                             gender.equals("(select one)") || experience.equals("(select one)")) {
-                        JOptionPane.showMessageDialog(null, "Error, please enter all values and try again.");
+                        JOptionPane.showMessageDialog(null, "Error: please enter all values and try again.");
                     } else {
                         Profile profile = new Profile(name, fitnessGoal, fitnessType, gender,
                                 experience, weight, height, null, null, 0,
@@ -61,8 +61,8 @@ public class CreatePlan extends JFrame{
                     }
                 } catch (NumberFormatException j) {
                     System.out.println(j);
-                    JOptionPane.showMessageDialog(null, "Error, please enter all values and try again.");
-                    System.out.println("error");
+                    JOptionPane.showMessageDialog(null, "Error: please enter all values and try again.");
+                    System.out.println("Error");
                 }
             }
         });

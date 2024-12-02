@@ -38,7 +38,7 @@ public class Login extends JFrame{
             if (profile != null) {
                 goToOverview(profile);
             } else {
-                JOptionPane.showMessageDialog(null, "Error loading profile. Please try again.");
+                JOptionPane.showMessageDialog(null, "Error loading profile: Please try again.");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Please enter your name.");
@@ -54,7 +54,7 @@ public class Login extends JFrame{
                 data.add(values);
             }
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Error: Could not find or open the file at " + csvFile);
+            JOptionPane.showMessageDialog(null, "Error: could not find or open the file at " + csvFile);
             return null;
         }
 

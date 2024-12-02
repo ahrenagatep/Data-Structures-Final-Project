@@ -66,7 +66,6 @@ public class Workouts extends JFrame {
         routineMap.put("Body Building", Arrays.asList("Incline Bench Press", "Leg Press", "Lat Pull Down", "Rows", "Bicep Curls", "Tricep Pushdown", "Dumbell Shoulder Press"));
         routineMap.put("Endurance", Arrays.asList("Treadmill", "Row Machine", "Stair Climber", "Jump Rope"));
 
-        // get exercises based on fitness type
         List<String> baseRoutine = routineMap.getOrDefault(fitnessType, new ArrayList<>());
 
         // customize sets on experience (change this to be able to be customized by the user.)
@@ -138,8 +137,16 @@ public class Workouts extends JFrame {
                     int response = JOptionPane.showConfirmDialog(null, target + " found, add to workout?", "Add exercise?", JOptionPane.YES_NO_OPTION);
 
                     if (response == JOptionPane.YES_OPTION) {
-                        workout.add(target);
-                        populateTable(workout);
+                        try {
+                            int sets = Integer.parseInt(JOptionPane.showInputDialog(null,"How many sets for this workout?"));
+                            int reps = Integer.parseInt(JOptionPane.showInputDialog(null,"How many reps for this workout?"));
+                            String weight = JOptionPane.showInputDialog(null, "How much weight to lift?");
+                            workout.add(target + " - " + sets + " sets of " + reps + " reps " + "("+weight+")");
+                            // " - 3 sets of 8 reps (heavy weight)"
+                            populateTable(workout);
+                        } catch (Exception ex) {
+                            System.out.println("Error: user cancelled input");
+                        }
                     }
                 } else {
                     System.out.println(target + " not found");
