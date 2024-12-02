@@ -11,7 +11,7 @@ public class Overview extends JFrame { // USES ARRAYLIST
     private JPanel wellnessPanel;
     private JProgressBar caloriesProgBar;
     private JPanel navigationPanel;
-    private JButton seeWorkoutPlansButton;
+    private JButton seeWorkoutButton;
     private JButton calorieTrackerButton;
     private JLabel tipLabel;
     private JLabel welcomeLabel;
@@ -36,7 +36,7 @@ public class Overview extends JFrame { // USES ARRAYLIST
         Profile userProfile = profile;
 
         this.setContentPane(this.mainPanel);
-        this.setTitle("Welcome back!");
+        this.setTitle("Welcome!");
         this.setBounds(600, 200, 625, 500);
         this.setResizable(true);
         this.setVisible(true);
@@ -68,7 +68,7 @@ public class Overview extends JFrame { // USES ARRAYLIST
         }
     }
     public void setUpSeeWorkoutPlansButton(Profile profile) {
-        seeWorkoutPlansButton.addActionListener(new ActionListener() {
+        seeWorkoutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 goToWorkouts(profile);

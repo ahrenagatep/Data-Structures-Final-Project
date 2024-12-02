@@ -11,6 +11,7 @@ public class Workouts extends JFrame {
     private JButton backToMainMenuButton;
     private JButton searchExerciseButton;
     private JTextField searchTextField;
+    private JButton removeExerciseButton;
 
     public Workouts(Profile profile) { // USES QUEUE, BINARY SEARCH TREE, HASHMAPS
         Profile userProfile = profile;
@@ -38,6 +39,7 @@ public class Workouts extends JFrame {
 
         setUpBackToMainMenuButton(userProfile);
         setUpSearchExerciseButton(exerciseBST, userProfile, workout);
+        setUpRemoveExerciseButton(profile);
     }
     private BinarySearchTree initializeExerciseTree() { // BINARY SEARCH TREE WOOOOOO
         BinarySearchTree exerciseTree = new BinarySearchTree();
@@ -110,6 +112,33 @@ public class Workouts extends JFrame {
 
         workoutTable.setModel(model);
     }
+    public void setUpRemoveExerciseButton(Profile profile) {
+        removeExerciseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = workoutTable.getSelectedRow();
+                if (selectedRow == -1) {
+                    JOptionPane.showMessageDialog(null, "Please select a row to remove.");
+                    return;
+                }
+
+                DefaultTableModel model = (DefaultTableModel) workoutTable.getModel();
+                String selectedExercise = model.getValueAt(selectedRow, 0).toString();  // exercise
+                String selectedDetails = model.getValueAt(selectedRow, 1).toString();   // sets/reps/weight
+
+                // makes a new updated queue without the exercise
+                // checks if element is the exercise to delete, if not then add to queue
+                Queue<String> updatedWorkout = new LinkedList<>();
+                for (String exercise : profile.workout) {
+                    if (!exercise.equals(selectedExercise + " - " + selectedDetails)) {
+                        updatedWorkout.add(exercise);
+                    }
+                }
+                profile.workout = updatedWorkout;
+                populateTable(profile.workout);
+            }
+        });
+    }
     public void setUpBackToMainMenuButton(Profile profile) {
         backToMainMenuButton.addActionListener(new ActionListener() {
             @Override
@@ -142,7 +171,6 @@ public class Workouts extends JFrame {
                             int reps = Integer.parseInt(JOptionPane.showInputDialog(null,"How many reps for this workout?"));
                             String weight = JOptionPane.showInputDialog(null, "How much weight to lift?");
                             workout.add(target + " - " + sets + " sets of " + reps + " reps " + "("+weight+")");
-                            // " - 3 sets of 8 reps (heavy weight)"
                             populateTable(workout);
                         } catch (Exception ex) {
                             System.out.println("Error: user cancelled input");

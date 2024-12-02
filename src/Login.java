@@ -4,15 +4,14 @@ import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.Buffer;
 import java.util.ArrayList;
-import java.util.Queue;
 
 public class Login extends JFrame{
 
     private JPanel loginPanel;
     private JButton loginButton;
     private JTextField nameTextField;
+    private JButton createProfileButton;
 
     Login(){
         this.setContentPane(this.loginPanel);
@@ -26,6 +25,12 @@ public class Login extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 String username = nameTextField.getText().trim();
                 loadProfile(username);
+            }
+        });
+        createProfileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                goToRegister();
             }
         });
     }
@@ -86,9 +91,14 @@ public class Login extends JFrame{
         }
         return null;
     }
-    public void goToOverview(Profile profile){
+    public void goToOverview(Profile profile) {
         this.setVisible(false);
         this.dispose();
         new Overview(profile);
+    }
+    public void goToRegister() {
+        this.setVisible(false);
+        this.dispose();
+        new CreatePlan();
     }
 }
