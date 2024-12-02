@@ -45,23 +45,6 @@ public class Startup extends JFrame{
             }
         });
     }
-//    public class GradientPanel extends JPanel {
-//        @Override
-//        protected void paintComponent(Graphics g) {
-//            super.paintComponent(g);
-//            Graphics2D g2d = (Graphics2D) g;
-//
-//            // Define gradient colors
-//            int width = getWidth();
-//            int height = getHeight();
-//            Color startColor = new Color(55,58,68);     // Black
-//            Color endColor = new Color(66,115,244);     // Blue
-//
-//            GradientPaint gradient = new GradientPaint(0, 0, startColor, 0, height, endColor);
-//            g2d.setPaint(gradient);
-//            g2d.fillRect(0, 0, width, height);
-//        }
-//    }
     public void goToCreatePage(){
         this.setVisible(false);
         this.dispose();
