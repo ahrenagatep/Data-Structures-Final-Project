@@ -45,6 +45,7 @@ public class CreatePlan extends JFrame{
                         return;
                     }
                     int age = Integer.parseInt(ageInput);
+                    int days = (Integer)daysSpinner.getValue();
 
                     // checks for any "(select one)" option was picked
                     if (fitnessGoal.equals("(select one)") || fitnessType.equals("(select one)") ||
@@ -53,7 +54,7 @@ public class CreatePlan extends JFrame{
                     } else {
                         Profile profile = new Profile(name, fitnessGoal, fitnessType, gender,
                                 experience, weight, height, null, null, 0,
-                                0, 0, 0, 0);
+                                0, 0, age, days);
                         profile.calLimit = calculateCalGoal(profile);
                         profile.displayStats();
                         goToOverview(profile);
