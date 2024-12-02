@@ -18,7 +18,7 @@ public class CalorieTracker extends JFrame{
     private JButton undoButton;
     private LinkedList<Food> foodList;
     private Stack<Action> actions;
-    public CalorieTracker(Profile profile) {
+    public CalorieTracker(Profile profile) { // USES LINKED LIST, STACK, BUBBLE SORT
         Profile userProfile = profile;
 
         this.setContentPane(this.mainPanel);
@@ -164,7 +164,7 @@ public class CalorieTracker extends JFrame{
         this.dispose();
         new Overview(profile);
     }
-    private LinkedList<Food> bubbleSortFood(LinkedList<Food> foodList) {
+    private LinkedList<Food> bubbleSortFood(LinkedList<Food> foodList) { // BUBBLE SORT!!!
         int n = foodList.size();
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < (n - i); j++) {

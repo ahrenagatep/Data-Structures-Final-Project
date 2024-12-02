@@ -12,7 +12,7 @@ public class Workouts extends JFrame {
     private JButton searchExerciseButton;
     private JTextField searchTextField;
 
-    public Workouts(Profile profile) {
+    public Workouts(Profile profile) { // USES QUEUE, BINARY SEARCH TREE
         Profile userProfile = profile;
 
         this.setContentPane(this.mainPanel);
@@ -39,7 +39,7 @@ public class Workouts extends JFrame {
         setUpBackToMainMenuButton(userProfile);
         setUpSearchExerciseButton(exerciseBST, userProfile, workout);
     }
-    private BinarySearchTree initializeExerciseTree() {
+    private BinarySearchTree initializeExerciseTree() { // BINARY SEARCH TREE WOOOOOO
         BinarySearchTree exerciseTree = new BinarySearchTree();
         String[] exercises = {"Barbell Bench Press", "Squats", "Deadlifts", "Overhead Press", "Pull Ups", "Incline Bench Press",
                 "Leg Press", "Lat Pull Down", "Rows", "Bicep Curls", "Tricep Pushdown", "Dumbbell Shoulder Press", "Treadmill",
@@ -60,7 +60,7 @@ public class Workouts extends JFrame {
         String experience = profile.experience;
         int weight = profile.weight;
 
-        // Define routines based on fitness type
+        // define routines based on fitness type
         HashMap<String, List<String>> routineMap = new HashMap<>();
         routineMap.put("Strength", Arrays.asList("Barbell Bench Press", "Squats", "Deadlifts", "Overhead Press", "Pull Ups"));
         routineMap.put("Body Building", Arrays.asList("Incline Bench Press", "Leg Press", "Lat Pull Down", "Rows", "Bicep Curls", "Tricep Pushdown", "Dumbell Shoulder Press"));
@@ -69,7 +69,7 @@ public class Workouts extends JFrame {
         // get exercises based on fitness type
         List<String> baseRoutine = routineMap.getOrDefault(fitnessType, new ArrayList<>());
 
-        // customize sets on experience
+        // customize sets on experience (change this to be able to be customized by the user.)
         Queue<String> workoutQueue = new LinkedList<>();
         if (fitnessType.equals("Endurance")) {
             for (String exercise : baseRoutine) {
@@ -95,7 +95,7 @@ public class Workouts extends JFrame {
         return workoutQueue;
     }
     private void populateTable(Queue<String> workout) {
-        Queue<String> workoutCopy = new LinkedList<>(workout);
+        Queue<String> workoutCopy = new LinkedList<>(workout); // QUEUE!!
 
         DefaultTableModel model = new DefaultTableModel(new Object[]{"Exercise", "Details"}, 0);
 
@@ -127,7 +127,7 @@ public class Workouts extends JFrame {
     public void setUpSearchExerciseButton(BinarySearchTree exerciseTree, Profile profile, Queue<String> workout){
         searchExerciseButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) { // SEARCHING THE BINARY TREE WOOO IN ALPHABETICAL ORDER
                 String target = searchTextField.getText().trim();
                 if (target.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Please enter an exercise to search for.");

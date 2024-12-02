@@ -4,7 +4,7 @@ import java.awt.event.ActionListener;
 import java.util.*;
 import java.io.*;
 
-public class Overview extends JFrame {
+public class Overview extends JFrame { // USES ARRAYLIST
     private JPanel mainPanel;
     private JPanel titlePanel;
     private JPanel caloriesPanel;
@@ -18,7 +18,7 @@ public class Overview extends JFrame {
     private JLabel totalCalLabel;
     private JLabel totalProtLabel;
     private JButton saveAndExitButton;
-    private ArrayList<String> tipsList = new ArrayList<>();
+    private ArrayList<String> tipsList = new ArrayList<>(); // ARRAYLIST!!!!
     public void loadTips() { // ayoo pauseee
         tipsList.add("Remember to drink plenty of water");
         tipsList.add("Sleep is essential, try to get 7-8 hours daily");
