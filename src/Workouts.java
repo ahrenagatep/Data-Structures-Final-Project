@@ -12,7 +12,7 @@ public class Workouts extends JFrame {
     private JButton searchExerciseButton;
     private JTextField searchTextField;
 
-    public Workouts(Profile profile) { // USES QUEUE, BINARY SEARCH TREE
+    public Workouts(Profile profile) { // USES QUEUE, BINARY SEARCH TREE, HASHMAPS
         Profile userProfile = profile;
 
         this.setContentPane(this.mainPanel);
@@ -61,7 +61,7 @@ public class Workouts extends JFrame {
         int weight = profile.weight;
 
         // define routines based on fitness type
-        HashMap<String, List<String>> routineMap = new HashMap<>();
+        HashMap<String, List<String>> routineMap = new HashMap<>(); // HASHMAPS WOOO
         routineMap.put("Strength", Arrays.asList("Barbell Bench Press", "Squats", "Deadlifts", "Overhead Press", "Pull Ups"));
         routineMap.put("Body Building", Arrays.asList("Incline Bench Press", "Leg Press", "Lat Pull Down", "Rows", "Bicep Curls", "Tricep Pushdown", "Dumbell Shoulder Press"));
         routineMap.put("Endurance", Arrays.asList("Treadmill", "Row Machine", "Stair Climber", "Jump Rope"));
