@@ -35,7 +35,7 @@ public class Workouts extends JFrame {
         }
 
         populateTable(workout);
-        BinarySearchTree exerciseBST = initializeExerciseTree();
+            BinarySearchTree exerciseBST = initializeExerciseTree();
 
         setUpBackToMainMenuButton(userProfile);
         setUpSearchExerciseButton(exerciseBST, userProfile, workout);
@@ -62,8 +62,8 @@ public class Workouts extends JFrame {
         String experience = profile.experience;
         int weight = profile.weight;
 
-        // define routines based on fitness type
-        HashMap<String, List<String>> routineMap = new HashMap<>(); // HASHMAPS WOOO
+        // define hashmaps routines based on fitness type
+        HashMap<String, List<String>> routineMap = new HashMap<>(); // HASHMAPS WOO
         routineMap.put("Strength", Arrays.asList("Barbell Bench Press", "Squats", "Deadlifts", "Overhead Press", "Pull Ups"));
         routineMap.put("Body Building", Arrays.asList("Incline Bench Press", "Leg Press", "Lat Pull Down", "Rows", "Bicep Curls", "Tricep Pushdown", "Dumbell Shoulder Press"));
         routineMap.put("Endurance", Arrays.asList("Treadmill", "Row Machine", "Stair Climber", "Jump Rope"));

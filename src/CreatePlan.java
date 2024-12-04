@@ -98,11 +98,11 @@ public class CreatePlan extends JFrame{
 
         double activityFactor;
         if (profile.days <= 1) {
-            activityFactor = 1.2; // sedentary
+            activityFactor = 1.2;   // barely active
         } else if (profile.days <= 3) {
-            activityFactor = 1.375; // lightly active
+            activityFactor = 1.375; // slightly active
         } else if (profile.days <= 5) {
-            activityFactor = 1.55; // moderately active
+            activityFactor = 1.55;  // moderately active
         } else {
             activityFactor = 1.725; // very active
         }

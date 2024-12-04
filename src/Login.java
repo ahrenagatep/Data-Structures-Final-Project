@@ -79,7 +79,7 @@ public class Login extends JFrame{
                 double dailyProt = Double.parseDouble(row[10]);
                 int age = Integer.parseInt(row[11]);
 
-                Profile loadedProfile = new Profile(name, fitnessGoal, fitnessType, gender, experience, weight, height, null, null, calLimit, dailyCals, dailyProt, age, days);
+                Profile loadedProfile = new Profile(name, fitnessGoal, fitnessType, gender, experience, weight, height, null, null, dailyCals, calLimit, dailyProt, age, days);
 //                                          Profile (String name, String fitnessGoal, String fitnessType, String gender, String experience, int weight, int height, Queue<String> workout, LinkedList<Food> foodList, int dailyCals, int calLimit, double dailyProt, int age, int days) <-- this is how it's supposed to be constructed
                 return loadedProfile;
             } catch (Exception ex) {

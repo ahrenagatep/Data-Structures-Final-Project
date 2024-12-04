@@ -3,7 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import com.formdev.flatlaf.*;
 
-
 public class Startup extends JFrame{
     private JButton createButton;
     private JPanel startPanel;

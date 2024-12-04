@@ -131,6 +131,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <editable value="true"/>
           <text value=""/>
         </properties>
       </component>

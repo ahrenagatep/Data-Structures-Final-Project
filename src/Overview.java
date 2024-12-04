@@ -19,7 +19,7 @@ public class Overview extends JFrame { // USES ARRAYLIST
     private JLabel totalProtLabel;
     private JButton saveAndExitButton;
     private ArrayList<String> tipsList = new ArrayList<>(); // ARRAYLIST!!!!
-    public void loadTips() { // ayoo pauseee
+    public void loadTips() {
         tipsList.add("Remember to drink plenty of water");
         tipsList.add("Sleep is essential, try to get 7-8 hours daily");
         tipsList.add("Always warm up and stretch before your workout");
@@ -122,7 +122,7 @@ public class Overview extends JFrame { // USES ARRAYLIST
             writer.append(String.valueOf(profile.calLimit)).append(",");
             writer.append(String.valueOf(profile.dailyCals)).append(",");
             writer.append(String.valueOf(profile.dailyProt)).append(",");
-            writer.append(String.valueOf(profile.age)).append(",");
+            writer.append(String.valueOf(profile.age)).append("\n");
 
             writer.flush();
             writer.close();

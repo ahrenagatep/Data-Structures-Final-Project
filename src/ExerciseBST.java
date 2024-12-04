@@ -34,18 +34,20 @@ class BinarySearchTree {
         return root;
     }
 
-    // Method to search for a value in the tree
+    // method to search for a value in the tree
     public boolean search(String exercise) {
         return searchRec(root, exercise);
     }
-    private boolean searchRec(Node root, String exercise) {
+    private boolean searchRec(Node root, String exercise) { // SEARCHING BINARY TREE
         if (root == null) {
             return false;
-        }
-        if (root.exercise.equalsIgnoreCase(exercise)) {
+        } else if (root.exercise.equalsIgnoreCase(exercise)) {
             return true;
+        } else {
+            // ternary, if true return left of root, if false return right of root
+            // "< 0" means comes before alphabetically
+            // "> 0" means comes after alphabetically
+            return exercise.compareTo(root.exercise) < 0 ? searchRec(root.left, exercise) : searchRec(root.right, exercise);
         }
-        // ternary, if true return left of root, if false return right of root
-        return exercise.compareTo(root.exercise) < 0 ? searchRec(root.left, exercise) : searchRec(root.right, exercise);
     }
 }
