@@ -27,5 +27,5 @@
 ## Installation Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/YourFitnessTracker.git
+   git clone https://github.com/ahrenagatep/Data-Structures-Final-Project.git
    ```
