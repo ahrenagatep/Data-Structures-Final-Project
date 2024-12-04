@@ -1,6 +1,6 @@
 # D.S. Final Project: YourFitnessTracker
 
-**YourFitnessTracker** is a fitness application designed as the final project for a Data Structures class. It leverages various data structures to manage workout routines, calorie tracking, and user profiles efficiently. The application features a user-friendly interface powered by FlatLaf for an aesthetically pleasing dark mode.
+**YourFitnessTracker** is a fitness application and my final project for my Data Structures class. It uses 7 data structures to manage workout routines, calorie tracking, and user profiles efficiently. The application features a user-friendly interface powered by JavaSwing and FlatLaf for an aesthetically pleasing dark mode.
 
 ## Features
 - Create personalized fitness plans tailored to individual goals.
