@@ -10,7 +10,7 @@
 
 ## Data Structures Used:
 ### Overview.java
-- **ArrayList**: Used to store and manage user data, including progress and achievements.
+- **ArrayList**: Used to store and fitness and health tips on the main menu.
 
 ### Workouts.java
 - **Queue**: Stores the workout plan, allowing efficient retrieval and modification of exercises in order.
