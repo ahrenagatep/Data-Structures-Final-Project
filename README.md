@@ -14,8 +14,8 @@
 
 ### Workouts.java
 - **Queue**: Stores the workout plan, allowing efficient retrieval and modification of exercises in order.
-- **Binary Search Tree**: Used for searching exercises quickly in alphabetical order.
 - **HashMap**: Manages pre-defined workout routines mapped to fitness types (e.g., strength, endurance).
+- **Binary Search Tree**: Used for searching exercises quickly in alphabetical order.
 
 ### CalorieTracker.java
 - **LinkedList**: Stores daily calorie intake data for dynamic manipulation.
