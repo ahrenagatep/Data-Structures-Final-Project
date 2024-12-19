@@ -128,7 +128,7 @@ public class Overview extends JFrame { // USES ARRAYLIST
             writer.close();
 
             JOptionPane.showMessageDialog(null, "Profile saved successfully!\nFile saved at:\n" + filePath);
-
+            System.exit(0);
         } catch (Exception ex) {
             // Handle any exceptions during the file save
             JOptionPane.showMessageDialog(null, "Error saving profile: " + ex.getMessage());
